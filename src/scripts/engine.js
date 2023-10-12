@@ -1,32 +1,83 @@
 const emojis = [
     "🎨",
-    "🎨",
-    "😊",
     "😊",
     "😎",
-    "😎",
-    "🎶",
     "🎶",
     "🎂",
-    "🎂",
     "🥩",
-    "🥩",
-    "🚐",
     "🚐",
     "🌎",
-    "🌎"
+    "🚝",
+    "👩‍🦱",
+    "✌",
+    "👍",
+    "🛴",
+    "🐱",
+    "🐎",
+    "🐬",
+    "🧡",
+    "💤",
+    "💨",
+    "💫",
+    "💥",
+    "💦",
+    "🧁",
+    "⭕",
+    "❌",
+    "🔆",
+    "🕘",
+    "✔",
+    "😛",
+    "🤑",
+    "😡",
+    "🦝"
 ];
+
+let temp = [];
 
 let openCards = [];
 
-let shuffleEmojis = emojis.sort(() => (Math.random() > 0.5 ? 2 : -1));
+let game = document.querySelector(".game");
 
-for (let i = 0; i < emojis.length; i++) {
-    let box = document.createElement("div");
-    box.className = "item";
-    box.innerHTML = shuffleEmojis[i];
-    box.onclick = handleClick;
-    document.querySelector(".game").appendChild(box);
+const quantidadeBtn = document.getElementById("quantidade");
+quantidadeBtn.addEventListener("change", alterarQuantidade);
+
+function alterarQuantidade() {
+    game.className = `game`;
+    let tamanhoDoEmoji;
+
+    if (quantidadeBtn.value == 4) {
+        game.setAttribute("style", `grid-template-columns: auto auto auto auto;`);
+        tamanhoDoEmoji = "5em";
+    } else if (quantidadeBtn.value == 6) {
+        game.setAttribute("style", `grid-template-columns: auto auto auto auto auto auto;`);
+        tamanhoDoEmoji = "3.5em";
+    } else if (quantidadeBtn.value == 8) {
+        game.setAttribute("style", `grid-template-columns: auto auto auto auto auto auto auto auto;`);
+        tamanhoDoEmoji = "2em";
+    }
+
+    let quantidade = Math.pow(quantidadeBtn.value, 2);
+
+    let emojis2 = emojis.sort(() => (Math.random() > 0.5 ? 2 : -1)).slice(0, quantidade/2);
+
+    temp = [];
+
+    emojis2.forEach((x) => temp.push(x));
+    emojis2.forEach((x) => temp.push(x));
+
+    let shuffleEmojis = temp.sort(() => (Math.random() > 0.5 ? 2 : -1));
+
+    game.innerHTML = "";
+
+    for (let i = 0; i < temp.length; i++) {
+        let box = document.createElement("div");
+        box.className = `item`;
+        box.style.fontSize = tamanhoDoEmoji;
+        box.innerHTML = shuffleEmojis[i];
+        box.onclick = handleClick;
+        game.appendChild(box);
+    }
 }
 
 function handleClick() {
@@ -56,7 +107,9 @@ function checkMatch() {
 
     openCards = [];
 
-    if (document.querySelectorAll(".boxMatch").length === emojis.length) {
+    if (document.querySelectorAll(".boxMatch").length === temp.length) {
         alert("Você venceu !");
     }
 }
+
+alterarQuantidade();

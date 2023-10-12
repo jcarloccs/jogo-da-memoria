@@ -50,22 +50,31 @@ h2 {
 .game {
     width: 430px;
     height: 430px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
     gap: 10px;
     transform-style: preserve-3d;
     perspective: 500px;
 }
 
+.quantidade4 {
+    grid-template-columns: auto auto auto auto;
+}
+
+.quantidade6 {
+    grid-template-columns: auto auto auto auto auto auto;
+}
+
+.quantidade8 {
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+}
+
 .item {
     position: relative;
-    width: 100px;
-    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #fff;
-    font-size: 3em;
     transform: rotateY(180deg);
     transition: 0.25s;
 }
@@ -88,4 +97,8 @@ h2 {
 .boxOpen::after,
 .boxMatch::after {
     transform: rotateY(180deg);
+}
+
+h3 {
+    color: white;
 }
