@@ -43,15 +43,16 @@ const quantidadeBtn = document.getElementById("quantidade");
 quantidadeBtn.addEventListener("change", alterarQuantidade);
 
 function alterarQuantidade() {
+    openCards = [];
     game.className = `game`;
     let tamanhoDoEmoji;
 
     if (quantidadeBtn.value == 4) {
         game.setAttribute("style", `grid-template-columns: auto auto auto auto;`);
-        tamanhoDoEmoji = "5em";
+        tamanhoDoEmoji = "4em";
     } else if (quantidadeBtn.value == 6) {
         game.setAttribute("style", `grid-template-columns: auto auto auto auto auto auto;`);
-        tamanhoDoEmoji = "3.5em";
+        tamanhoDoEmoji = "3em";
     } else if (quantidadeBtn.value == 8) {
         game.setAttribute("style", `grid-template-columns: auto auto auto auto auto auto auto auto;`);
         tamanhoDoEmoji = "2em";
