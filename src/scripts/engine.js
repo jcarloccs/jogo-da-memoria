@@ -40,7 +40,7 @@ let openCards = [];
 let game = document.querySelector(".game");
 
 const quantidadeBtn = document.getElementById("quantidade");
-quantidadeBtn.addEventListener("change", alterarQuantidade);
+quantidadeBtn.addEventListener("input", alterarQuantidade);
 
 function alterarQuantidade() {
     openCards = [];
