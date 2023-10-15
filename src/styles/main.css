@@ -1,3 +1,17 @@
+@media screen and (min-aspect-ratio: 1/1) {
+    .game {
+        width: 70vh;
+        height: 70vh;
+    }
+}
+
+@media screen and (max-aspect-ratio: 1/1) {
+    .game {
+        width: 90vw;
+        height: 90vw;
+    }
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -14,32 +28,32 @@ body {
     justify-content: center;
     align-items: center;
     gap: 30px;
-    background: linear-gradient(325deg,
-            #03001e 0%,
-            #7303c0 30%,
-            #ec38bc 70%,
-            #fdeff9 100%);
-    padding: 40px 60px;
+    padding: 20px 20px;
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
 }
 
 h2 {
-    font-size: 4em;
+    font-size: 7vh;
     color: #fff;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.2em;
 }
 
 .reset {
-    padding: 15px 20px;
+    padding: 5px 5px;
     width: 100%;
     color: #000;
     background-color: #fff;
     border: none;
-    font-size: 1.5em;
+    font-size: 3vh;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 600;
+    margin: 10px;
+    border-radius: 1vw;
 }
 
 .reset:focus {
@@ -48,11 +62,9 @@ h2 {
 }
 
 .game {
-    width: 430px;
-    height: 430px;
     display: grid;
     grid-template-columns: auto auto auto auto;
-    gap: 10px;
+    gap: 1%;
     transform-style: preserve-3d;
     perspective: 500px;
 }
@@ -65,17 +77,19 @@ h2 {
     background-color: #fff;
     transform: rotateY(180deg);
     transition: 0.25s;
+    border-radius: 0.5vw;
 }
 
 .item::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: #404040;
+    background: #7dd1f1;
     
     transition: 0.25s;
     transform: rotateY(0deg);
     backface-visibility: hidden;
+    border-radius: 0.5vw;
 }
 
 .item.boxOpen {
@@ -89,4 +103,16 @@ h2 {
 
 h3 {
     color: white;
+    font-size: 3vh;
+}
+
+#controles {
+    display: flex;
+    width: auto;
+    height: auto;
+}
+
+#qtd-controles {
+    margin: 10px;
+    
 }

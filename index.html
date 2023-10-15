@@ -12,10 +12,15 @@
 <body>
     <div class="container">
         <h2>JOGO DA MEMÓRIA</h2>
-        <div class="game quantidade 4"></div>
-        <button class="reset" onclick="alterarQuantidade();">RESET GAME</button>
-        <h3>QUANTIDADE DE ITENS:</h3>
-        <input type="range" name="" id="quantidade" value="4" min="4" max="8" step="2">
+        <div class="game"></div>
+        <div id="controles">
+            <button class="reset" onclick="alterarQuantidade();">RESET GAME</button>
+            <div id="qtd-controles">
+                <h3>QUANTIDADE DE ITENS:</h3>
+                <input type="range" name="" id="quantidade" value="4" min="4" max="8" step="2">
+            </div>
+        </div>
+        
     </div>
 
     <script src="./src/scripts/engine.js" defer></script>

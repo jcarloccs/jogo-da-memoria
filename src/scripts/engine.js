@@ -49,13 +49,13 @@ function alterarQuantidade() {
 
     if (quantidadeBtn.value == 4) {
         game.setAttribute("style", `grid-template-columns: auto auto auto auto;`);
-        tamanhoDoEmoji = "4em";
+        tamanhoDoEmoji = "3em";
     } else if (quantidadeBtn.value == 6) {
         game.setAttribute("style", `grid-template-columns: auto auto auto auto auto auto;`);
-        tamanhoDoEmoji = "3em";
+        tamanhoDoEmoji = "2em";
     } else if (quantidadeBtn.value == 8) {
         game.setAttribute("style", `grid-template-columns: auto auto auto auto auto auto auto auto;`);
-        tamanhoDoEmoji = "2em";
+        tamanhoDoEmoji = "1.5em";
     }
 
     let quantidade = Math.pow(quantidadeBtn.value, 2);
