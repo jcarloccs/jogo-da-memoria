@@ -44,7 +44,7 @@ quantidadeBtn.addEventListener("input", alterarQuantidade);
 
 function alterarQuantidade() {
     openCards = [];
-    game.className = `game`;
+    
     let tamanhoDoEmoji;
 
     if (quantidadeBtn.value == 4) {
